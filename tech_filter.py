@@ -34,4 +34,33 @@ def score_objects(objects: list[dict], threshold: float=0.4) -> list[dict]:
     
     raw = response.json()["response"].strip()
     
-    if
+    if raw.startswith("```"):
+        raw = raw.split("```")[1]
+        if raw.startswith("json"):
+            raw = raw[4:]
+    raw = raw.strip()
+    
+    scores = json.loads(raw)
+    score_map = {s["label"].lower(): s for s in scores}
+    
+    curated = []
+    
+    for obj in objects:
+        key = obj["label"].lower()
+        s = score_map.get(key, {})
+        eng_score = float(s.get("eng_score", 0.0))
+        if eng_score >= threshold:
+            curated.append({
+                **obj,
+                "eng_score": eng_score,
+                "category": s.get("category", "none"),
+                "sub_category": s.get("sub_category", "none"),
+                "complexity": s.get("complexity", 0.0),
+                "reasoning": s.get("reasoning", "")
+            })
+        
+    # higher complexity objects show up first
+    curated.sort(key=lambda x: -x["eng_score"])
+    
+    print(f"{len(curated)} objects passed the {threshold} threshold filter")
+    return curated
