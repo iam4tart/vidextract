@@ -23,7 +23,7 @@ def main():
     print(f"Threshold: {args.threshold}")
     print(f"Sample   : {args.fps} fps\n")
     
-    frames = sample_frames(args.video, args.fps)
+    frames = sample_frames(args.video, fps=args.fps)
     detections = detect_all(frames)
     unique_objects = deduplicate(detections)
     tech_objects = score_objects(unique_objects, threshold=args.threshold)
