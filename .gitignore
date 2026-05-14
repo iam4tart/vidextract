@@ -226,4 +226,4 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-*.pt
+yolov8l-worldv2.pt
