@@ -1,0 +1,84 @@
+{
+  "video": "videos/1.mp4",
+  "total_frames_sampled": 8,
+  "total_unique_detected": 18,
+  "total_tech_objects": 4,
+  "objects": [
+    {
+      "label": "young girl walking on beach with surfboard",
+      "avg_confidence": null,
+      "frames_seen": 1,
+      "sources": [
+        "florence2"
+      ],
+      "sample_bbox": [
+        1611.8,
+        391.5,
+        1778.9,
+        724.1
+      ],
+      "eng_score": 0.85,
+      "category": "structural",
+      "sub_category": "surface",
+      "complexity": 0.3,
+      "reasoning": "Surfboard as a structural object with surface functionality."
+    },
+    {
+      "label": "shirtless man walking on beach with surfboard",
+      "avg_confidence": null,
+      "frames_seen": 1,
+      "sources": [
+        "florence2"
+      ],
+      "sample_bbox": [
+        175.7,
+        513.5,
+        383.0,
+        822.4
+      ],
+      "eng_score": 0.85,
+      "category": "structural",
+      "sub_category": "surface",
+      "complexity": 0.3,
+      "reasoning": "Surfboard as a structural object with surface functionality."
+    },
+    {
+      "label": "man walking on beach with surfboard",
+      "avg_confidence": null,
+      "frames_seen": 1,
+      "sources": [
+        "florence2"
+      ],
+      "sample_bbox": [
+        265.9,
+        539.5,
+        442.6,
+        866.7
+      ],
+      "eng_score": 0.85,
+      "category": "structural",
+      "sub_category": "surface",
+      "complexity": 0.3,
+      "reasoning": "Surfboard as a structural object with surface functionality."
+    },
+    {
+      "label": "young woman walking on beach with red bag and blue shorts",
+      "avg_confidence": null,
+      "frames_seen": 1,
+      "sources": [
+        "florence2"
+      ],
+      "sample_bbox": [
+        1608.0,
+        471.4,
+        1790.4,
+        793.3
+      ],
+      "eng_score": 0.6,
+      "category": "structural",
+      "sub_category": "frame",
+      "complexity": 0.3,
+      "reasoning": "Red bag as a structural object with frame functionality."
+    }
+  ]
+}

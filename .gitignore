@@ -227,3 +227,5 @@ __marimo__/
 .streamlit/secrets.toml
 
 yolov8l-worldv2.pt
+
+.env
