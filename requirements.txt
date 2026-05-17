@@ -6,3 +6,5 @@ transformers
 timm
 Pillow
 requests
+sentence-transformers
+scikit-learn

@@ -40,6 +40,13 @@ def score_objects(objects: list[dict], threshold: float = 0.4) -> list[dict]:
             raw = raw[4:]
     raw = raw.strip()
 
+    # Extract JSON array from the response
+    # Find the first '[' and last ']' to handle extra text
+    start_idx = raw.find('[')
+    end_idx = raw.rfind(']')
+    if start_idx != -1 and end_idx != -1 and end_idx > start_idx:
+        raw = raw[start_idx:end_idx+1]
+    
     scores = json.loads(raw)
     score_map = {s["label"].lower(): s for s in scores}
 
